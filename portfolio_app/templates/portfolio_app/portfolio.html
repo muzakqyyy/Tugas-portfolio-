@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ nama }} | Portfolio</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Portfolio.</div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-left">
+            <p class="hero-label">HELLO, I’M</p>
+            <h1>{{ nama }}</h1>
+            <h2>STUDENT • DEVELOPER • AI ENTHUSIAST</h2>
+
+            <p class="hero-description">
+                Saya adalah pelajar yang tertarik pada teknologi modern,
+                khususnya dalam bidang AI, Web Development, dan digital creativity.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Contact Me</a>
+                <a href="#about" class="btn-secondary">Explore More</a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="floating-card">
+                <h3>Personal Info</h3>
+
+                <div class="identity-item">
+                    <span>Nama</span>
+                    <p>Ahmad Muzaky Jauhar</p>
+                </div>
+
+                <div class="identity-item">
+                    <span>TTL</span>
+                    <p>Bekasi, 04 Desember 2009</p>
+                </div>
+
+                <div class="identity-item">
+                    <span>NISN</span>
+                    <p>{{ nisn }}</p>
+                </div>
+
+                <div class="identity-item">
+                    <span>Sekolah</span>
+                    <p>SMK TI BAZMA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="section-header">
+            <div class="line"></div>
+            <h2>About Me</h2>
+        </div>
+
+        <div class="about-card">
+            <p>{{ about_me }}</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="section-header">
+            <div class="line"></div>
+            <h2>Skills</h2>
+        </div>
+
+        <div class="skills-marquee">
+            <div class="skills-track">
+                {% for skill in skills %}
+                    <div class="skill-card">{{ skill }}</div>
+                {% endfor %}
+
+                {% for skill in skills %}
+                    <div class="skill-card">{{ skill }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="section-header">
+            <div class="line"></div>
+            <h2>Contact Me</h2>
+        </div>
+
+        <div class="contact-container">
+            <a href="{{ email }}" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div>
+                    <span>Email</span>
+                    <h3>muzakqyy@gmail.com</h3>
+                </div>
+                <p>↗</p>
+            </a>
+
+            <a href="{{ phone }}" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div>
+                    <span>No Telp</span>
+                    <h3>085813860308</h3>
+                </div>
+                <p>↗</p>
+            </a>
+
+            <a href="{{ instagram }}" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div>
+                    <span>Instagram</span>
+                    <h3>{{ instagram_text }}</h3>
+                </div>
+                <p>↗</p>
+            </a>
+        </div>
+    </section>
+
+    <section id="certificates" class="certificate-section">
+        <div class="section-header">
+            <div class="line"></div>
+            <h2>Certificates</h2>
+        </div>
+
+        <div class="marquee">
+            <div class="marquee-track">
+                {% for cert in certificates %}
+                    <div class="certificate-card">{{ cert }}</div>
+                {% endfor %}
+
+                {% for cert in certificates %}
+                    <div class="certificate-card">{{ cert }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        
+    </section>
+
+</body>
+</html>
